@@ -7,6 +7,9 @@ services:
     networks:
       - kan-network
       - dokploy-network
+
+
+
     build:
       context: .
       dockerfile: ./apps/web/Dockerfile.new
@@ -108,6 +111,7 @@ services:
       - APPLE_APP_BUNDLE_IDENTIFIER=${APPLE_APP_BUNDLE_IDENTIFIER}
     depends_on:
       - postgres
+      - redis
     restart: unless-stopped
 
   postgres:
@@ -122,6 +126,15 @@ services:
     volumes:
       - kan_postgres_data:/var/lib/postgresql/data
     restart: unless-stopped
+    networks:
+      - kan-network
+
+  redis:
+    image: redis:alpine
+    container_name: kan-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
     networks:
       - kan-network
 
