@@ -11,6 +11,15 @@ Kan is an open-source project management tool (Trello alternative) built with:
 - **Auth**: Better Auth
 - **Internationalization**: Lingui
 
+## AI Agent Skills Mapping
+
+When working on this project, AI agents MUST automatically activate the following skills depending on the task's scope (do not wait for user prompt):
+
+- **Frontend (`apps/web`)**: `nextjs-best-practices`, `react-patterns`, `cc-skill-frontend-patterns`, and `tailwind-patterns`.
+- **Backend/API (`packages/api`, `packages/shared`)**: `nodejs-backend-patterns` and `cc-skill-coding-standards`.
+- **Database (`packages/db`)**: `postgresql` and `database-design`.
+- **General / End-to-End**: `typescript-pro` (strict typing) and `full-stack-orchestration-full-stack-feature`.
+
 ## Setup Commands
 
 - Install deps: `pnpm install`
